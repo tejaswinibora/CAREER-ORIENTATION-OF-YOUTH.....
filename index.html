@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Career Orientation of Youth</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="main-container">
+
+<!-- HOME -->
+<section id="home" class="page active">
+    <div class="hero">
+        <div class="logo">🎓</div>
+        <span class="tag">YOUR FUTURE STARTS HERE</span>
+        <h1>Career Orientation<br>Of Youth</h1>
+        <p>Discover your passion. Explore career paths.<br>Build your future.</p>
+        <button onclick="goToPage('registerPage')">Create Account →</button>
+        <button class="secondary" onclick="goToPage('loginPage')">Login</button>
+    </div>
+</section>
+
+<!-- REGISTER -->
+<section id="registerPage" class="page">
+    <h2>Create Account</h2>
+    <p class="subtitle">Register to explore your career opportunities.</p>
+
+    <form id="registerForm">
+        <label>Full Name</label>
+        <input type="text" id="regName" placeholder="Enter your name" required>
+
+        <label>Email</label>
+        <input type="email" id="regEmail" placeholder="Enter email" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" id="regPhone" placeholder="10 digit mobile number"
+        pattern="[0-9]{10}" maxlength="10" required>
+
+        <label>Password</label>
+        <input type="password" id="regPassword"
+        placeholder="Create password" minlength="6" required>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p class="switch-text">
+        Already registered?
+        <span onclick="goToPage('loginPage')">Login here</span>
+    </p>
+
+    <button class="back-button" onclick="goToPage('home')">Back</button>
+</section>
+
+<!-- LOGIN -->
+<section id="loginPage" class="page">
+    <h2>Student Login</h2>
+    <p class="subtitle">Login to access your career journey.</p>
+
+    <form id="loginForm">
+        <label>Email</label>
+        <input type="email" id="loginEmail" placeholder="Enter email" required>
+
+        <label>Password</label>
+        <input type="password" id="loginPassword" placeholder="Enter password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p class="switch-text">
+        Don't have an account?
+        <span onclick="goToPage('registerPage')">Register</span>
+    </p>
+
+    <button class="back-button" onclick="goToPage('home')">Back</button>
+</section>
+
+<!-- COURSE SELECTION -->
+<section id="coursePage" class="page protected">
+    <div class="topbar">
+        <span>🎓 Career Explorer</span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <h2>Select Your Career</h2>
+    <p class="subtitle">Choose a course to explore opportunities.</p>
+
+    <select id="courseSelect">
+        <option value="">-- Select Course --</option>
+        <option value="Engineering">Engineering (BE/BTech)</option>
+        <option value="MBA">MBA</option>
+        <option value="BCS">BCS</option>
+        <option value="BCA">BCA</option>
+        <option value="Pharmacy">Pharmacy (B.Pharm)</option>
+        <option value="Law">Law (BA LLB)</option>
+        <option value="BBA">BBA</option>
+        <option value="BCom">B.Com</option>
+        <option value="BA">BA</option>
+        <option value="BSc">B.Sc</option>
+        <option value="Architecture">Architecture</option>
+        <option value="Journalism">Journalism</option>
+        <option value="Design">Design</option>
+        <option value="CA">Chartered Accountant (CA)</option>
+    </select>
+
+    <button onclick="showCareer()">Explore Career →</button>
+</section>
+
+<!-- CAREER DETAILS -->
+<section id="careerPage" class="page protected">
+    <div class="topbar">
+        <span>🎓 Career Explorer</span>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <h2>Career Information</h2>
+
+    <div id="careerOutput"></div>
+
+    <button onclick="goToPage('thankPage')">Finish →</button>
+
+    <button class="back-button" onclick="goToPage('coursePage')">
+        Choose Another Course
+    </button>
+</section>
+
+<!-- THANK YOU -->
+<section id="thankPage" class="page protected">
+    <div class="success-content">
+        <div class="success-icon">✔</div>
+        <h1>Thank You!</h1>
+        <p id="thankMessage"></p>
+        <p>Explore your opportunities and build your future.</p>
+        <button onclick="goToPage('coursePage')">Explore Again</button>
+        <button class="secondary" onclick="logout()">Logout</button>
+    </div>
+</section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
